@@ -5,16 +5,25 @@ public class question22 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter binary number: ");
         int binary = sc.nextInt();
-        int decimal = 0;
-        int power = 0;
 
-        while (binary > 0) {
-            int digit = binary % 10;
-            decimal += digit * (1 << power);
-            power++;
-            binary /= 10;
+        if (binary < 0) {
+            System.out.println("Invalid binary number");
+        } 
+        else if (binary == 0) {
+            System.out.println("Decimal = 0");
+        }else{
+                int decimal = 0;
+            int power = 0;
+
+            while (binary > 0) {
+                int digit = binary % 10;
+                decimal += digit * (1 << power);
+                power++;
+                binary /= 10;
+            }
+            System.out.println("Decimal = " + decimal);
         }
-        System.out.println("Decimal = " + decimal);
+        
         sc.close();
     }
 }

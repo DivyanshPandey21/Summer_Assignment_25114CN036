@@ -8,6 +8,7 @@ public class question5 {
         int digit;
         System.out.println("Enter your number : ");
         int n = sc.nextInt();
+        n = Math.abs(n);
         while(n != 0){
          digit = n % 10;
          sum += digit;

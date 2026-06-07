@@ -13,14 +13,26 @@ public class question16 {
         System.out.println("The Armstrong Numbers are : ");
 
         for (int i = start; i <= end; i++) {
+            if(i < 0){
+                continue;
+            }
             int temp = i;
-            int digits = String.valueOf(i).length();
+            int digits = 0;
             int sum = 0;
 
-            while (temp > 0) {
-                int digit = temp % 10;
+            int t = temp;
+            if (t == 0) digits = 1;
+            while (t > 0) {
+                digits++;
+                t /= 10;
+            }
+
+            t = temp;
+
+            while (t > 0) {
+                int digit = t % 10;
                 sum += (int) Math.pow(digit, digits);
-                temp /= 10;
+                t /= 10;
             }
 
             if (sum == i)

@@ -1,7 +1,7 @@
 package day7;
 import java.util.Scanner;
 public class question25 {
-    static int factorial(int n) {
+    static long factorial(int n) {
         if (n == 0 || n == 1) {
             return 1;
         }
@@ -11,9 +11,12 @@ public class question25 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your number: ");
         int n = sc.nextInt();
-        int result = factorial(n);
-
-        System.out.println("Factorial = "+ result);
+        if(n < 0){
+            System.out.println("Factorial not defined for negative numbers");
+        }else{
+            long result = factorial(n);
+            System.out.println("Factorial = "+ result);
+        }
         sc.close();
     }
 }

@@ -1,16 +1,20 @@
 import java.util.Scanner;
 public class question4 {
     public static void main(String[] args) {
-        int b = 0;
+        int count = 0;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter your number : ");
+        System.out.print("Enter your number : ");
         int n = sc.nextInt();
-        while(n != 0){
+        if(n == 0){
+            System.out.print("The number of digits in given number is 1");
+        }else{
+            n = Math.abs(n);
+            while(n != 0){
             n /= 10;
-            b++;
+            count++;
+            }
+            System.out.println("The number of digits in given number is : "+ count);   
         }
-        System.out.println("The number of digits in given number is : "+ b);
         sc.close();
     }
-    
 }

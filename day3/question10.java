@@ -7,14 +7,14 @@ public class question10 {
         int n = sc.nextInt();
         
         for(int i = 2; i <= n; i++){
-            int prime = 0;
-            for(int j = 2; j <= i/2; j++){
+            boolean isPrime = true;
+            for(int j = 2; j * j<= i; j++){
                 if (i % j == 0) {
-                    prime = 1;
+                    isPrime = false;
                     break;
                 }
             }
-            if (prime ==0) {
+            if (isPrime) {
                 System.out.println(i);
             }  
         }

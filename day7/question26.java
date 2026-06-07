@@ -11,8 +11,12 @@ public class question26 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of terms: ");
         int n = sc.nextInt();
-        for (int i = 0; i < n; i++) {
-            System.out.print(fibonacci(i) + " ");
+        if (n < 0) {
+            System.out.println("Invalid input");
+        } else {
+            for (int i = 0; i < n; i++) {
+                System.out.print(fibonacci(i) + " ");
+            }
         }
         sc.close();
     }

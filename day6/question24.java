@@ -9,10 +9,18 @@ public class question24 {
         int n = sc.nextInt();
         long result = 1;
 
+        if (n < 0) {
+        System.out.println("Negative power not supported");
+        } else if (n == 0) {
+        System.out.println("Result = 1");
+        } else {
+        
         for (int i = 1; i <= n; i++) {
-            result *= x;
+        result *= x;
         }
+
         System.out.println("Result = " + result);
+        }
         sc.close();
     }
 }

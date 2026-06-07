@@ -8,7 +8,10 @@ public class question18 {
         int sum = 0;
         int num = n;
 
-        while(n > 0){
+        if (n < 0) {
+            System.out.println("Negative numbers are not Strong numbers");
+        }else{
+            while(n > 0){
             int digit = n % 10;
             int fact = 1;
             for(int i = 1; i <= digit; i++){
@@ -16,11 +19,12 @@ public class question18 {
             }
             sum += fact;
             n = n/10;
-        }
-        if(sum == num){
+           }
+           if(sum == num){
             System.out.println(num +" is an strong number");
-        }else{
+           }else{
             System.out.println(num +" is not a strong number");
+           }
         }
         sc.close();
     }

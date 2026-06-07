@@ -8,15 +8,17 @@ public class question13{
         int firstterm = 0;
         int secondterm = 1;
 
-        System.out.print("Fibonacci series : ");
-
-        for(int i = 1; i <= term; i++){
+        if(term <= 0){
+            System.out.println("Invalid input, try again");
+        }else{
+            System.out.print("Fibonacci series : ");
+            for(int i = 1; i <= term; i++){
             System.out.print(firstterm + " ");
             int nextterm = firstterm + secondterm;
             firstterm = secondterm;
             secondterm = nextterm;
+            }
         }
-
         sc.close();
     }
 }

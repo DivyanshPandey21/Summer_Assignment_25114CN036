@@ -5,14 +5,27 @@ public class question20 {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter your number: ");
         int n = sc.nextInt();
-        int largestPrimeFactor = -1;
-        for(int i = 2; i <= n; i++) {
-            while(n % i == 0) {
-                largestPrimeFactor = i;
-                n /= i;
+
+        if(n <= 1){
+            System.out.println("No prime factor exists");
+        }else{
+             int largestPrimeFactor = -1;
+
+              while (n % 2 == 0) {
+                largestPrimeFactor = 2;
+                n /= 2;
+            } 
+            for(int i = 3; i * i <= n; i += 2) {
+                while(n % i == 0) {
+                    largestPrimeFactor = i;
+                    n /= i;
+                }
             }
+            if (n > 2) {
+                largestPrimeFactor = n;
+            }
+            System.out.println("Largest Prime Factor = " + largestPrimeFactor);
         }
-        System.out.println("Largest Prime Factor = " + largestPrimeFactor);
         sc.close();
     }
 }

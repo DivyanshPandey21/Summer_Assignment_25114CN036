@@ -1,14 +1,18 @@
 import java.util.Scanner;
 public class question3 {
     public static void main(String[] args) {
-        int fact= 1;
+        long fact= 1;
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter the number ; ");
+        System.out.print("Enter the number : ");
         int n = sc.nextInt();
-         for(int i = 1;i <= n; i++){
+        if(n < 0){
+            System.out.println("The factorial is not defined for negative numbers");
+        }else{
+            for(int i = 1;i <= n; i++){
             fact*=i;
-         }
-         System.out.println("The factorial of given number is : " + fact);
+           }
+           System.out.println("The factorial of given number is : " + fact);
+        }
          sc.close();
     }
 }
